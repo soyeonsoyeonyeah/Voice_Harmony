@@ -21,7 +21,7 @@ This project focuses on improving communication accessibility for the hearing im
 
 4. **Text-to-Speech Conversion (TTS)**:
    - Converts the recognized text (or user-inputted text) into speech, offering auditory feedback for the hearing impaired.
-   - Google’s Text-to-Speech API is used for TTS, providing high-quality, natural-sounding voice output.
+   - Google’s Text-to-Speech API is used for TTS.
 
 ## Technologies & Tools
 
@@ -49,7 +49,7 @@ This project focuses on improving communication accessibility for the hearing im
 ## Demo Video
 
 Check out the project in action on YouTube by following this link:  
-[Sign Language Alphabet Detection Demo](https://youtube.com/your-demo-link)
+[Voice Harmony Demo](https://youtu.be/aor41xgKazE)
 
 ## Anticipated Impact & Applications
 
