@@ -29,8 +29,10 @@ This project focuses on improving communication accessibility for the hearing im
 - **Frameworks**: Spring Boot 3.3.2, Flask, Thymeleaf
 - **Machine Learning Models**: Attention model for sign language detection, LSTM for temporal sequence learning
 - **Computer Vision**: Mediapipe for extracting hand landmarks, Transformer for lip reading
+- **Real-Time Communication**: WebRTC for real-time video and audio streaming
 - **Development Tools**: PyCharm, Eclipse, Tomcat (Web server), Jupyter Notebook
 - **Speech-to-Text & Text-to-Speech**: OpenAI Whisper for STT and Google Text-to-Speech API for TTS
+
 
 ## System Architecture
 
