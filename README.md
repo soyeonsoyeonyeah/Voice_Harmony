@@ -42,7 +42,7 @@ This project focuses on improving communication accessibility for the hearing im
    - Serves as the backend for processing input data. The Flask server utilizes Attention, LSTM, and Whisper models to predict and output text based on the input data.
 
 3. **Data Preprocessing**:
-   - **Sign Language Data**: Hand landmarks are extracted using Mediapipe, then processed with Attention mechanisms for focused gesture recognition.
+   - **Sign Language Data**: For sign language recognition, the Korean Sign Language dataset (KETI) was used. Keypoints of the user's body parts, including the face and hands, were extracted using OpenPose and normalized into 2D objects. This data was then combined with the Attention model for focused gesture recognition. 
    - **Lip Movement Data**: The OLKAVS lip reading dataset was used for lip movement recognition. Video frames were processed to extract only the mouth region, which was then used to train the Transformer model. The Transformer model, known for its ability to handle long sequences, learns to interpret the subtle variations in mouth shapes to convert them into text.
    - **Speech Data**: Audio is processed using the Whisper model, converting speech into text that is displayed on the user interface.
 
