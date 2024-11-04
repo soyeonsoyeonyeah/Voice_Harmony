@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AI.Tech - Artificial Intelligence HTML Template</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- 웹소캣 연결에 필요한 라이브러리 선언 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+video{
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}
+</style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    
+
+
+    
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(20, 24, 62, 0.7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn btn-square bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-light p-3"
+                            placeholder="Type search keyword">
+                        <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-primary newsletter py-5" id="mainDiv1">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">채팅방 입장</div>
+                    <h1 class="text-white mb-4">방 번호를 입력해보세요~!</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" id="roomIdInput" type="number"
+                            placeholder="번호를 입력하세요. " style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2" id="enterRoomBtn"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">상대방과 방 번호를 맞추면 연결할 수 있습니다.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+    
+    <!-- Feature Start -->
+    <div class="container-fluid bg-primary feature pt-5" id="mainDiv2">
+        <div class="container pt-5">
+            <div class="row g-5">
+                <div class="col-lg-6 align-self-center mb-md-5 pb-md-5 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Why Choose Us</div>
+                    <h1 class="text-white mb-4">Voice Harmony</h1>
+                    <p class="text-light mb-4"></p>
+                    <div class="d-flex align-items-center text-white mb-3">
+                        <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <span>Sign language to Text</span>
+                    </div>
+                    <div class="d-flex align-items-center text-white mb-3">
+                        <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <span>Voice to Text</span>
+                    </div>
+                    <div class="d-flex align-items-center text-white mb-3">
+                        <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <span>example</span>
+                    </div>
+                    <div class="row g-4 pt-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex rounded p-3" style="background: rgba(256, 256, 256, 0.1);">
+                                <i class="fa fa-users fa-3x text-white"></i>
+                                <div class="ms-3">
+                                    <h2 class="text-white mb-0" data-toggle="counter-up">9999</h2>
+                                    <p class="text-white mb-0">Happy Clients</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex rounded p-3" style="background: rgba(256, 256, 256, 0.1);">
+                                <i class="fa fa-check fa-3x text-white"></i>
+                                <div class="ms-3">
+                                    <h2 class="text-white mb-0" data-toggle="counter-up">9999</h2>
+                                    <p class="text-white mb-0">Project Complete</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-end text-center text-md-end wow fadeIn" data-wow-delay="0.5s">
+                    <img class="img-fluid" src="img/feature.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+    <audio id="audio" src="./mp3/ex_ko.mp3"></audio>
+    <button class="btn btn-success" type="button" id="startSteamBtn" style="display: none;">start Streams</button>
+    
+    <div class="d-flex justify-content-around container-fluid bg-primary feature pt-5 mainDiv3" id="mainDiv3" style="display:none">
+		<!-- 내 웹캠 화면을 보여주는 video html -->
+		<div class="mainDiv3 rounded" style="display:none">
+			<div class="mainDiv3" style="display:none">
+				<div class="mainDiv3" style="display:none">
+				    <video class="rounded" id="localStream" autoplay playsinline controls style="display: none;"></video>
+				</div>
+			</div>
+			
+		</div>
+	    <div class="mainDiv3 rounded container-fluid d-flex flex-column" id="controls" style="width:500px; display:none; background-color: #f8f9fa;">
+	    	<div class="mainDiv3 row flex-fill" style="display:none;">
+    			<div class="mainDiv3 col-12 d-flex justify-content-center align-items-center" style="display:none;">
+    				<p class="fw-semibold fs-4">수어 인식 서비스</p>
+    			</div>
+    			<div class="mainDiv3 col-12 d-flex justify-content-evenly align-items-center" style="display:none;">
+			    	<button class="btn btn-danger" id="recordButton">수어 인식</button>
+			    	<button class="btn btn-dark" id="stopButton" disabled>중지</button>
+		    	</div>
+	    	</div>
+	    	<div class="mainDiv3 row flex-fill" style="background-color: #fff3cd; display:none;">
+		    	<div class="mainDiv3 col-12 d-flex justify-content-center align-items-center" style="display:none;">
+		    		<p class="fw-semibold fs-4">음성 인식 서비스</p>
+		    	</div>
+		    	<div class="mainDiv3 col-12 d-flex justify-content-evenly align-items-center" style="display:none;">
+		            <button class="btn btn-danger" id="voicerecordButton">음성 인식</button>
+		            <button class="btn btn-dark" id="voicestopButton" disabled>중지</button>
+	            </div>
+	    	</div>
+	    	<div class="mainDiv3 row flex-fill" style="background-color: #e2e3e5; display:none;">
+			    <div class="mainDiv3 col-12 d-flex flex-column justify-content-center align-items-center"  style="display:none;">
+			    	<p class="fw-semibold fs-4">TTS 서비스</p>
+		            <input type="text" id="testTTS" class="mb-2 form-control"/>
+		        </div>
+		        <div class="mainDiv3 col-12 d-flex justify-content-evenly align-items-center" style="display:none;">
+		            <button class="btn btn-success" id="sendTextButton">tts</button>
+		            <button class="btn btn-success" id="playTTS">play</button>
+		       	</div>
+	    	</div>
+		</div>
+		<div class="mainDiv3" style="width: 500px; height: 480px; display:none;">
+			<div class="mainDiv3 team-item bg-white text-center rounded p-4 pt-0 mainDiv3" style="width: 500px; height: 480px; display:none;">
+				<p class="fw-semibold fs-2">인식 결과</p>
+	            <h1><span id="signLanguageToWord"></span></h1>
+	        </div>
+		</div>
+		
+    </div>
+		
+	<!-- WebRTC에 연결된 웹캠들이 추가되는 Div  -->
+    <div class="d-flex justify-content-around container-fluid bg-primary feature pt-5 mainDiv3" style="display:none" id="remoteStreamDiv">
+    	
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <h1 class="text-white">Voice<span class="text-primary">.</span>Harmony</h1>
+                    </a>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
+                        clita duo justo et tempor</p>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Career</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="">Robotic Automation</a>
+                    <a class="btn btn-link" href="">Machine learning</a>
+                    <a class="btn btn-link" href="">Predictive Analysis</a>
+                    <a class="btn btn-link" href="">Data Science</a>
+                    <a class="btn btn-link" href="">Robot Technology</a>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+	<!-- webRTC 연결을 위한 js  -->
+    <script src="./js/peerConfig.js"></script>
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+	<script src="js/app2.js"></script>
+	
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+    var mediaRecorder;
+    var recordedChunks = [];
+    var videoPlayback = document.getElementById("localStream");
+
+    
+    // 수어인식 동영상 녹화 시작
+    document.getElementById("recordButton").addEventListener("click", function() {
+        // 비디오 스트림 가져오기
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(function(stream) {
+            // MediaRecorder 초기화
+            mediaRecorder = new MediaRecorder(stream);
+		
+            // 녹화된 데이터 조각 저장
+            mediaRecorder.ondataavailable = function(event) {
+                if (event.data.size > 0) {
+                    recordedChunks.push(event.data);
+                }
+            };
+
+            // 녹화가 종료되면 처리
+            mediaRecorder.onstop = function() {
+                var blob = new Blob(recordedChunks, { type: 'video/webm' });
+                var url = URL.createObjectURL(blob);
+                videoPlayback.src = url;
+
+                // 다운로드 링크 생성
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'recorded-video.webm'; // 파일 이름 설정
+                document.body.appendChild(a); // 링크를 DOM에 추가
+                a.click(); // 클릭하여 다운로드 시작
+                document.body.removeChild(a); // 링크 제거
+                
+                document.getElementById("signLanguageToWord").innerHTML = "수어를 서버로 전송, 계산 중 ~~";
+             	// 서버로 전송
+                var formData = new FormData();
+                formData.append('file', blob, 'recorded-video.webm');
+				
+                // Axios를 사용하여 파일 전송
+                axios.post('https://localhost:5000/sign_language', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(response => {
+                    console.log('File uploaded successfully:', response.data);
+                    document.getElementById("signLanguageToWord").innerHTML = "수어 텍스트 변환 <br>"+ response.data;
+                })
+                .catch(error => {
+                    console.error('Error uploading file:', error);
+                    document.getElementById("signLanguageToWord").innerHTML = "전송오류 !!!!";
+                });
+				console.log(recordedChunks);
+                recordedChunks = []; // 초기화
+            };
+
+            mediaRecorder.start();
+            console.log("Recording started");
+            document.getElementById("recordButton").disabled = true;
+            document.getElementById("stopButton").disabled = false;
+            document.getElementById("voicerecordButton").disabled = true;
+            document.getElementById("voicestopButton").disabled = true;
+        }).catch(function(err) {
+            console.error("Error accessing media devices.", err);
+        });
+    });
+
+    document.getElementById("stopButton").addEventListener("click", function() {
+        mediaRecorder.stop();
+        console.log("Recording stopped");
+        document.getElementById("recordButton").disabled = false;
+        document.getElementById("stopButton").disabled = true;
+        document.getElementById("voicerecordButton").disabled = false;
+        document.getElementById("voicestopButton").disabled = true;
+    });
+    
+    // 수어인식 동영상 녹화 끝
+    
+    // 목소리용 동영상 녹화 시작
+    document.getElementById("voicerecordButton").addEventListener("click", function() {
+        // 비디오 스트림 가져오기
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(function(stream) {
+            // MediaRecorder 초기화
+            mediaRecorder = new MediaRecorder(stream);
+		
+            // 녹화된 데이터 조각 저장
+            mediaRecorder.ondataavailable = function(event) {
+                if (event.data.size > 0) {
+                    recordedChunks.push(event.data);
+                }
+            };
+
+            // 녹화가 종료되면 처리
+            mediaRecorder.onstop = function() {
+                var blob = new Blob(recordedChunks, { type: 'video/webm' });
+                var url = URL.createObjectURL(blob);
+                videoPlayback.src = url;
+
+                // 다운로드 링크 생성
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'recorded-video.webm'; // 파일 이름 설정
+                document.body.appendChild(a); // 링크를 DOM에 추가
+                a.click(); // 클릭하여 다운로드 시작
+                document.body.removeChild(a); // 링크 제거
+                
+                document.getElementById("signLanguageToWord").innerHTML = "목소리를 서버로 전송, 계산 중 ~~";
+             	// 서버로 전송
+                var formData = new FormData();
+                formData.append('file', blob, 'recorded-video.webm');
+				
+                // Axios를 사용하여 파일 전송
+                axios.post('https://localhost:5000/wave01', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(response => {
+                    console.log('File uploaded successfully:', response.data);
+                    document.getElementById("signLanguageToWord").innerHTML = "음성 텍스트 변환 <br>" + response.data;
+                })
+                .catch(error => {
+                    console.error('Error uploading file:', error);
+                    document.getElementById("signLanguageToWord").innerHTML = "전송오류 !!!!";
+                });
+				console.log(recordedChunks);
+                recordedChunks = []; // 초기화
+            };
+
+            mediaRecorder.start();
+            console.log("Recording started");
+            document.getElementById("recordButton").disabled = true;
+            document.getElementById("stopButton").disabled = true;
+            document.getElementById("voicerecordButton").disabled = true;
+            document.getElementById("voicestopButton").disabled = false;
+        }).catch(function(err) {
+            console.error("Error accessing media devices.", err);
+        });
+    });
+
+    document.getElementById("voicestopButton").addEventListener("click", function() {
+        mediaRecorder.stop();
+        console.log("VocieRecording stopped");
+        document.getElementById("recordButton").disabled = false;
+        document.getElementById("stopButton").disabled = true;
+        document.getElementById("voicerecordButton").disabled = false;
+        document.getElementById("voicestopButton").disabled = true;
+    });
+    // 목소리용 동영상 녹화 끝
+    
+    var audioSrc;
+    
+    document.getElementById("sendTextButton").onclick = function () {
+        const text = document.getElementById("testTTS").value;
+
+        // 음성 변환 API 요청
+        axios.post('https://localhost:5000/tts', {
+            text: text
+        })
+        .then(function (response) {
+        	audioSrc = "./mp3/ex_ko" + response.data + ".mp3";
+        	try {
+        		console.log(1);
+        		document.getElementById("audio").src = audioSrc;
+        		console.log(2);
+
+        		document.getElementById("audio").load();
+        		console.log(3);
+        		document.getElementById("audio").play();
+        		console.log(4);
+            } catch (error) {
+                console.error("이클립스가 파일을 감지중.", error);
+                alert('이클립스가 파일을 감지중입니다. 잠시 후에 play 버튼을 눌러주세요')
+            }
+            
+        })
+        .catch(function (error) {
+            console.error("Error converting text to speech:", error);
+        });
+    };
+    
+    document.getElementById("playTTS").onclick = function () {
+        const audio = document.getElementById("audio");
+        try {
+        	//audio.src = audioSrc;
+        	audio.load();
+	        audio.play();
+        } catch (error) {
+            console.error("이클립스가 파일을 감지중.", error);
+            alert('아직도 이클립스가 파일을 감지중입니다. 잠시 후에 play 버튼을 다시 눌러주세요')
+        }
+    };
+</script>
+</body>
+
+</html>
